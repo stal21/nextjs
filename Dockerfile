@@ -1,5 +1,5 @@
 # Use the official Node.js runtime as the base image
-FROM node:14-alpine
+FROM node:19-alpine
 
 # Set the working directory
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the app's source code
 COPY . .
